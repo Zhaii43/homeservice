@@ -3,8 +3,16 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState, useEffect } from 'react';
 
 export default function Services() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
   const searchParams = useSearchParams();
   const router = useRouter();
   const category = searchParams.get("category") || "all";
@@ -114,7 +122,19 @@ export default function Services() {
         <section className="flex-1 ml-8 p-4 bg-transparent rounded-lg shadow-md">
           <h2 className="text-3xl font-bold mb-4">{content.title}</h2>
           <p className="text-lg mb-6">{content.description}</p>
-          ...
+          
+          {/* Image Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {content.images.map((image, index) => (
+              <div key={index} className="relative overflow-hidden rounded-md">
+                <img
+                  src={image}
+                  alt={`${content.title} image ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </section>
       </main>
 

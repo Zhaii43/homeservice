@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Signup() {
   const headerAnimation = {
@@ -21,18 +21,18 @@ export default function Signup() {
       >
         <h1 className="text-xl font-bold">Home Services</h1>
         <nav className="flex gap-6 text-sm font-medium">
-          <a href="/" className="hover:text-blue-600">Home</a>
-          <a href="/services" className="hover:text-blue-600">Services</a>
-          <a href="/about-us" className="hover:text-blue-600">About Us</a>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
+          <Link href="/services" className="hover:text-blue-600">Services</Link>
+          <Link href="/about-us" className="hover:text-blue-600">About Us</Link>
         </nav>
         <div>
-          <a href="/login">
+          <Link href="/login">
             <img
               src="/images/user1.png" // Replace with the actual path to your icon image
               alt="Login/Signup"
               className="w-8 h-8 cursor-pointer hover:opacity-80"
             />
-          </a>
+          </Link>
         </div>
       </motion.header>
 
@@ -138,9 +138,9 @@ export default function Signup() {
               {/* Redirect to Login */}
               <p className="text-center text-sm text-gray-600 mt-4">
                 Already have an account?{" "}
-                <a href="/login" className="text-blue-600 hover:underline">
+                <Link href="/login" className="text-blue-600 hover:underline">
                   Log in
-                </a>
+                </Link>
               </p>
             </div>
           </form>

@@ -4,6 +4,7 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link"; // Import the Link component
 
 // Sample service details data
 const serviceDetails = {
@@ -97,18 +98,18 @@ export default function Services() {
       >
         <h1 className="text-xl font-bold">Home Services</h1>
         <nav className="flex gap-6 text-sm font-medium">
-          <a href="/" className="hover:text-blue-600">Home</a>
-          <a href="/services" className="hover:text-blue-600">Services</a>
-          <a href="/about-us" className="hover:text-blue-600">About Us</a>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
+          <Link href="/services" className="hover:text-blue-600">Services</Link>
+          <Link href="/about-us" className="hover:text-blue-600">About Us</Link>
         </nav>
         <div>
-          <a href="/login">
+          <Link href="/login">
             <img
               src="/images/user1.png"
               alt="Login/Signup"
               className="w-8 h-8 cursor-pointer hover:opacity-80"
             />
-          </a>
+          </Link>
         </div>
       </motion.header>
 
@@ -139,57 +140,7 @@ export default function Services() {
         <section className="flex-1 ml-8 p-4 bg-transparent rounded-lg shadow-md">
           <h2 className="text-3xl font-bold mb-4">{content.title}</h2>
           <p className="text-lg mb-6">{content.description}</p>
-          
-          {category === "all" ? (
-            <div className="flex flex-wrap gap-4 justify-center">
-              {content.images.map((img, index) => (
-                <div key={index} className="w-64 bg-white p-4 rounded-lg shadow-md">
-                  <Image
-                    src={img}
-                    alt={`${content.title} ${index + 1}`}
-                    width={200}
-                    height={150}
-                    className="rounded-md mb-4 mx-auto"
-                  />
-                  <h3 className="text-lg font-semibold">Service Preview {index + 1}</h3>
-                  <p className="text-sm text-gray-600">Explore our services</p>
-                  <button
-                    onClick={() => handleCategoryChange(categories[index + 1] || "all")}
-                    className="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {(serviceDetails[category] || []).map((service, index) => (
-                <div
-                  key={service.id}
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
-                >
-                  <Image
-                    src={content.images[index % content.images.length]}
-                    alt={service.title}
-                    width={200}
-                    height={150}
-                    className="rounded-md mb-4 mx-auto"
-                  />
-                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{service.details}</p>
-                  <p className="text-sm font-medium text-gray-800 mb-4">Category: {content.title}</p>
-                  <p className="text-lg font-bold text-blue-600 mb-4">{service.price}</p>
-                  <a
-                    href={`/services/${category}/${service.id}`}
-                    className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition text-center block"
-                  >
-                    Book Now
-                  </a>
-                </div>
-              ))}
-            </div>
-          )}
+          ...
         </section>
       </main>
 

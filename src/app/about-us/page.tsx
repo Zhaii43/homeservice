@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link"; // Import the Link component
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -21,21 +22,28 @@ export default function About() {
       >
         <h1 className="text-xl font-bold">Home Services</h1>
         <nav className="flex gap-6 text-sm font-medium">
-          <a href="/" className="hover:text-blue-600">Home</a>
-          <a href="/services" className="hover:text-blue-600">Services</a>
-          <a href="/about-us" className="hover:text-blue-600">About Us</a>
+          <Link href="/" passHref>
+            <a className="hover:text-blue-600">Home</a>
+          </Link>
+          <Link href="/services" passHref>
+            <a className="hover:text-blue-600">Services</a>
+          </Link>
+          <Link href="/about-us" passHref>
+            <a className="hover:text-blue-600">About Us</a>
+          </Link>
         </nav>
         <div>
-          <a href="/login">
-            <img
-              src="/images/user1.png" // Replace with the actual path to your icon image
-              alt="Login/Signup"
-              className="w-8 h-8 cursor-pointer hover:opacity-80"
-            />
-          </a>
+          <Link href="/login" passHref>
+            <a>
+              <img
+                src="/images/user1.png" // Replace with the actual path to your icon image
+                alt="Login/Signup"
+                className="w-8 h-8 cursor-pointer hover:opacity-80"
+              />
+            </a>
+          </Link>
         </div>
       </motion.header>
-      
 
       {/* Main Content */}
       <main className="flex flex-col items-center justify-center flex-grow text-center p-8">

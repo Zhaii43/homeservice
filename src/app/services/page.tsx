@@ -1,9 +1,8 @@
-// app/services/page.jsx
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import Link from "next/link"; // Import the Link component
+import Link from "next/link";
 
 export default function Services() {
   const searchParams = useSearchParams();
@@ -50,13 +49,13 @@ export default function Services() {
     },
   };
 
-  const categories = Object.keys(serviceContent);
+  const categories = Object.keys(serviceContent) as (keyof typeof serviceContent)[];
 
-  const handleCategoryChange = (selectedCategory) => {
+  const handleCategoryChange = (selectedCategory: keyof typeof serviceContent) => {
     router.push(`/services?category=${selectedCategory}`);
   };
 
-  const content = serviceContent[category] || serviceContent["all"];
+  const content = serviceContent[category as keyof typeof serviceContent] || serviceContent["all"];
 
   return (
     <div className="flex flex-col min-h-screen">

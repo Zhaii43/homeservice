@@ -34,15 +34,17 @@ export default function Home() {
         </nav>
         <div>
           <Link href="/login">
-            <img
+            <Image
               src="/images/user1.png" // Replace with the actual path to your icon image
               alt="Login/Signup"
+              width={32}
+              height={32}
               className="w-8 h-8 cursor-pointer hover:opacity-80"
             />
           </Link>
         </div>
       </motion.header>
-      
+
       {/* Main Content with Fade-In Animation */}
       <motion.main
         className="flex flex-col items-center justify-center flex-grow text-center p-8"
@@ -66,53 +68,51 @@ export default function Home() {
           </button>
         </div>
 
-      {/* Categories Section */}
-      <section className="mt-12 w-full max-w-4xl text-center">
-        <div className="flex flex-wrap justify-center gap-4">
-          {/* Cleaning */}
-          <Link
-            href="/services?category=cleaning"
-            className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
-          >
-            <img src="/images/mop.png" alt="Cleaning" className="w-8 h-8 mb-2" />
-            Cleaning
-          </Link>
-          {/* Repair */}
-          <Link
-            href="/services?category=repair"
-            className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
-          >
-            <img src="/images/support.png" alt="Repair" className="w-8 h-8 mb-2" />
-            Repair
-          </Link>
-          {/* Painting */}
-          <Link
-            href="/services?category=painting"
-            className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
-          >
-            <img src="/images/paintbrush.png" alt="Painting" className="w-8 h-8 mb-2" />
-            Painting
-          </Link>
-          {/* Plumbing */}
-          <Link
-            href="/services?category=plumbing"
-            className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
-          >
-            <img src="/images/repairing.png" alt="Plumbing" className="w-8 h-8 mb-2" />
-            Plumbing
-          </Link>
-          {/* Electric */}
-          <Link
-            href="/services?category=electric"
-            className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
-          >
-            <img src="/images/electricity.png" alt="Electric" className="w-8 h-8 mb-2" />
-            Electric
-          </Link>
-        </div>
-      </section>
-      {/* Popular Businesses Section */}
-      {/* Your code for this section */}
+        {/* Categories Section */}
+        <section className="mt-12 w-full max-w-4xl text-center">
+          <div className="flex flex-wrap justify-center gap-4">
+            {/* Cleaning */}
+            <Link
+              href="/services?category=cleaning"
+              className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+            >
+              <Image src="/images/mop.png" alt="Cleaning" width={32} height={32} />
+              Cleaning
+            </Link>
+            {/* Repair */}
+            <Link
+              href="/services?category=repair"
+              className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+            >
+              <Image src="/images/support.png" alt="Repair" width={32} height={32} />
+              Repair
+            </Link>
+            {/* Painting */}
+            <Link
+              href="/services?category=painting"
+              className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+            >
+              <Image src="/images/paintbrush.png" alt="Painting" width={32} height={32} />
+              Painting
+            </Link>
+            {/* Plumbing */}
+            <Link
+              href="/services?category=plumbing"
+              className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+            >
+              <Image src="/images/repairing.png" alt="Plumbing" width={32} height={32} />
+              Plumbing
+            </Link>
+            {/* Electric */}
+            <Link
+              href="/services?category=electric"
+              className="flex flex-col items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:scale-105 transform transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+            >
+              <Image src="/images/electricity.png" alt="Electric" width={32} height={32} />
+              Electric
+            </Link>
+          </div>
+        </section>
       </motion.main>
 
       {/* Footer */}

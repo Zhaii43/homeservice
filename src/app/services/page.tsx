@@ -2,33 +2,8 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link"; // Import the Link component
-
-// Sample service details data
-const serviceDetails = {
-  cleaning: [
-    { id: 1, title: "Deep Cleaning", details: "Comprehensive cleaning for every corner of your home", price: "$99" },
-    { id: 2, title: "Regular Cleaning", details: "Weekly or bi-weekly maintenance cleaning", price: "$59" },
-  ],
-  repair: [
-    { id: 1, title: "Appliance Repair", details: "Fix refrigerators, washers, and more", price: "$79" },
-    { id: 2, title: "Furniture Repair", details: "Restore your furniture to perfect condition", price: "$89" },
-  ],
-  painting: [
-    { id: 1, title: "Interior Painting", details: "Professional wall and ceiling painting", price: "$149" },
-    { id: 2, title: "Exterior Painting", details: "Weather-resistant outdoor painting", price: "$199" },
-  ],
-  plumbing: [
-    { id: 1, title: "Leak Repair", details: "Fix leaks in pipes and faucets", price: "$69" },
-    { id: 2, title: "Drain Cleaning", details: "Clear clogged drains efficiently", price: "$49" },
-  ],
-  electric: [
-    { id: 1, title: "Wiring Installation", details: "Safe electrical wiring setup", price: "$129" },
-    { id: 2, title: "Lighting Repair", details: "Fix or install new lighting fixtures", price: "$79" },
-  ],
-};
 
 export default function Services() {
   const searchParams = useSearchParams();

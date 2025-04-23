@@ -8,13 +8,17 @@ import { useState, useEffect } from 'react';
 export default function Services() {
   const [isClient, setIsClient] = useState(false);
 
+  // Always call the hooks at the top level
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  
   useEffect(() => {
     setIsClient(true);
   }, []);
 
+  // Ensure that we only use `useSearchParams` and `useRouter` when client-side rendering
   if (!isClient) return null;
-  const searchParams = useSearchParams();
-  const router = useRouter();
+  
   const category = searchParams.get("category") || "all";
 
   const serviceContent = {

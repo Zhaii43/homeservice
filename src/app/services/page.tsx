@@ -37,8 +37,31 @@ const Services = () => {
         "/images/electricians.jpeg",
       ],
     },
-    // ...other categories
-  };
+    cleaning: {
+      title: "Cleaning Services",
+      description: "Professional cleaning services to keep your home spotless.",
+      images: ["/images/cleaning.jpg", "/images/cleaning2.jpg", "/images/cleaning3.jpg"],
+    },
+    repair: {
+      title: "Repair Services",
+      description: "Reliable home repair solutions for all kinds of fixes.",
+      images: ["/images/repair.jpeg", "/images/repair2.jpeg", "/images/repair3.jpeg"],
+    },
+    painting: {
+      title: "Painting Services",
+      description: "Expert painting services to add vibrancy to your home.",
+      images: ["/images/paint.png", "/images/paint2.png", "/images/paint3.png"],
+    },
+    plumbing: {
+      title: "Plumbing Services",
+      description: "Quick and reliable plumbing solutions for your home.",
+      images: ["/images/plumbing.jpg", "/images/plumbing2.jpg", "/images/plumbing3.jpg"],
+    },
+    electric: {
+      title: "Electrical Services",
+      description: "Safe and efficient electrical installations and repairs.",
+      images: ["/images/electricians.jpeg", "/images/electric2.jpeg", "/images/electric3.jpeg"],
+    },  };
 
   const categories = Object.keys(serviceContent) as (keyof typeof serviceContent)[];
 
